@@ -11,7 +11,7 @@ License:	GPL v2
 Group:		Applications/WWW
 #  snmpdiskio 0.9.4 (Disk I/O statistics on Linux) - http://forums.cacti.net/about12742.html
 Source0:	http://forums.cacti.net/files/%{realname}-%{version}.tar.gz
-# Source7-md5:	9f3512729ae6cad0904cac0fada719eb
+# Source0-md5:	9f3512729ae6cad0904cac0fada719eb
 URL:		http://www.debianhelp.co.uk/cactitemplates.htm
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
