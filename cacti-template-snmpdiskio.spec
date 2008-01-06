@@ -2,13 +2,12 @@
 # - %%post - add template to cacti
 %define		realname	snmpdiskio
 %include	/usr/lib/rpm/macros.perl
-Summary:	Disk i/o statistics (Read/Write bytes) in Cacti
-Summary(pl.UTF-8):	Statystyki operacji I/O (Odczyt/Zapis w bajtach) dysków w Cacti
+Summary:	Disk I/O statistics (Read/Write bytes) in Cacti
+Summary(pl.UTF-8):	Statystyki operacji dyskowych we/wy (odczyt/zapis w bajtach) w Cacti
 Name:		cacti-addons-snmpdiskio
 Version:	0.9.4
 Release:	0.1
 License:	GPL v2
-Group:		Applications/WWW
 Group:		Applications/WWW
 #  snmpdiskio 0.9.4 (Disk I/O statistics on Linux) - http://forums.cacti.net/about12742.html
 Source0:	http://forums.cacti.net/files/%{realname}-%{version}.tar.gz
@@ -24,25 +23,27 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		webcactisnmpqueriesdir	%{webcactiroot}/resource/snmp_queries
 
 %description
-Disk i/o statistics (Read/Write bytes) in Cacti.
+Disk I/O statistics (Read/Write bytes) in Cacti.
 
 %description -l pl.UTF-8
-Statystyki operacji I/O (Odczyt/Zapis w bajtach) dysków w Cacti
+Statystyki operacji dyskowych wejścia/wyjścia (odczyt/zapis w bajtach)
+w Cacti.
 
 %package -n snmpdiskio
-Summary:	Disk i/o statistics (Read/Write bytes) over SNMP
-Summary(pl.UTF-8):	Statystyki operacji I/O (Odczyt/Zapis w bajtach) po SNMP
+Summary:	Disk I/O statistics (Read/Write bytes) over SNMP
+Summary(pl.UTF-8):	Statystyki operacji dyskowych we/wy (odczyt/zapis w bajtach) po SNMP
 Group:		Applications
 
 %description -n snmpdiskio
-Disk i/o statistics (Read/Write bytes) over SNMP.
-
-This set of simple scripts gives you disk I/O support. Currently
-net-snmp has flaky or no support for disk I/O at all. This version
-0.9.4, gives you only one thing: Disk I/O (bytes/sec).
+This set of simple scripts gives you disk I/O statistics over SNMP;
+currently net-snmp has flaky or no support for disk I/O at all. This
+version gives you only one thing: Disk I/O (bytes/sec).
 
 %description -n snmpdiskio -l pl.UTF-8
-Statystyki operacji I/O (Odczyt/Zapis w bajtach) dysków po SNMP.
+Ten zestaw prostych skryptów udostępnia statystyki wejścia/wyjścia dla
+dysków po SNMP; aktualnie net-snmp ma kiepską albo żadną obsługę
+dyskowego wejścia/wyjścia. Ta wersja udostępnia tylko jedną wartość:
+Disk I/O (w bajtach/sekundę).
 
 %prep
 %setup -q -n %{realname}-%{version}
