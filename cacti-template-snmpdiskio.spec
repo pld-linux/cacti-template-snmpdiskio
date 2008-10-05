@@ -3,7 +3,7 @@ Summary:	Disk I/O statistics (Read/Write bytes) in Cacti
 Summary(pl.UTF-8):	Statystyki operacji dyskowych we/wy (odczyt/zapis w bajtach) w Cacti
 Name:		cacti-addons-snmpdiskio
 Version:	0.9.6
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Applications/WWW
 Source0:	http://forums.cacti.net/files/%{plugin}-0.9.4.tar.gz
@@ -57,9 +57,9 @@ EOF
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{cactidir}/resource/script_queries,%{cactidir}/resource/snmp_queries,%{_sbindir}}
-install cacti_data_query_snmp_disk_statistics.xml $RPM_BUILD_ROOT%{cactidir}/resource/script_queries
-install cacti_graph_template_disk_io_bytessec.xml $RPM_BUILD_ROOT%{cactidir}/resource/script_queries
+install -d $RPM_BUILD_ROOT{%{cactidir}/resource/snmp_queries,%{_sbindir}}
+install cacti_data_query_snmp_disk_statistics.xml $RPM_BUILD_ROOT%{cactidir}/resource
+install cacti_graph_template_disk_io_bytessec.xml $RPM_BUILD_ROOT%{cactidir}/resource
 install partition.xml  $RPM_BUILD_ROOT%{cactidir}/resource/snmp_queries
 install snmpdiskio $RPM_BUILD_ROOT%{_sbindir}
 
@@ -68,15 +68,14 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 %{_sbindir}/cacti-add_template \
-	%{cactidir}/resource/script_queries/cacti_data_query_snmp_disk_statistics.xml \
-	%{cactidir}/resource/script_queries/cacti_graph_template_disk_io_bytessec.xml \
-	%{cactidir}/resource/snmp_queries/partition.xml
+	%{cactidir}/resource/cacti_data_query_snmp_disk_statistics.xml \
+	%{cactidir}/resource/cacti_graph_template_disk_io_bytessec.xml
 
 %files
 %defattr(644,root,root,755)
 %doc ChangeLog README TODO
-%{cactidir}/resource/script_queries/cacti_data_query_snmp_disk_statistics.xml
-%{cactidir}/resource/script_queries/cacti_graph_template_disk_io_bytessec.xml
+%{cactidir}/resource/cacti_data_query_snmp_disk_statistics.xml
+%{cactidir}/resource/cacti_graph_template_disk_io_bytessec.xml
 %{cactidir}/resource/snmp_queries/partition.xml
 
 %files -n snmpdiskio
