@@ -3,7 +3,7 @@
 @@ -1,7 +1,21 @@
 -#!/bin/sh
 -# $Id$
-+#!/bin/bash
++#!/bin/sh
 +# $Id$
 +# snmpdiskio v0.9.6 (c) 2008 Dieter Verlaeckt <dieter.verlaeckt@gmail.com>
 +# snmpdiskio v0.9.5 (c) 2007 Pablo Destefanis <pdestefanis@gmail.com>
