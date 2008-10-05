@@ -47,7 +47,7 @@ mv %{plugin}-*/* .
 %patch0 -p1
 %patch1 -p1
 
-cat > snmp.%{plugin}.conf <<'EOF'
+cat > snmpd.%{plugin}.conf <<'EOF'
 exec .1.3.6.1.4.1.2021.54 hdNum %{_sbindir}/snmpdiskio hdNum
 exec .1.3.6.1.4.1.2021.55 hdIndex %{_sbindir}/snmpdiskio hdIndex
 exec .1.3.6.1.4.1.2021.56 hdDescr %{_sbindir}/snmpdiskio hdDescr
@@ -81,5 +81,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n snmpdiskio
 %defattr(644,root,root,755)
-%doc README snmp.%{plugin}.conf
+%doc README snmpd.%{plugin}.conf
 %attr(755,root,root) %{_sbindir}/snmpdiskio
