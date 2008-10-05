@@ -16,11 +16,7 @@ URL:		http://www.debianhelp.co.uk/cactitemplates.htm
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		webcactiroot		/usr/share/cacti
-%define		webcactiscriptdir	%{webcactiroot}/scripts
-%define		webcactiscrptserverdir	%{webcactiroot}/resource/script_server
-%define		webcactiscriptqueriesdir %{webcactiroot}/resource/script_queries
-%define		webcactisnmpqueriesdir	%{webcactiroot}/resource/snmp_queries
+%define		cactidir		/usr/share/cacti
 
 %description
 Disk I/O statistics (Read/Write bytes) in Cacti.
@@ -50,10 +46,10 @@ Disk I/O (w bajtach/sekundę).
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{webcactiroot}/cacti,%{webcactiscriptdir},%{webcactiscriptqueriesdir},%{webcactisnmpqueriesdir},%{webcactiscrptserverdir},%{_bindir}}
-install cacti_data_query_snmp_disk_statistics.xml $RPM_BUILD_ROOT%{webcactiscriptqueriesdir}
-install cacti_graph_template_disk_io_bytessec.xml $RPM_BUILD_ROOT%{webcactiscriptqueriesdir}
-install partition.xml  $RPM_BUILD_ROOT%{webcactisnmpqueriesdir}
+install -d $RPM_BUILD_ROOT{%{cactidir}/cacti,%{cactidir}/scripts,%{cactidir}/resource/script_queries,%{cactidir}/resource/snmp_queries,%{cactidir}/resource/script_server,%{_bindir}}
+install cacti_data_query_snmp_disk_statistics.xml $RPM_BUILD_ROOT%{cactidir}/resource/script_queries
+install cacti_graph_template_disk_io_bytessec.xml $RPM_BUILD_ROOT%{cactidir}/resource/script_queries
+install partition.xml  $RPM_BUILD_ROOT%{cactidir}/resource/snmp_queries
 install snmpdiskio $RPM_BUILD_ROOT%{_bindir}
 
 %clean
@@ -62,9 +58,9 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc ChangeLog README TODO
-%{webcactiscriptqueriesdir}/cacti_data_query_snmp_disk_statistics.xml
-%{webcactiscriptqueriesdir}/cacti_graph_template_disk_io_bytessec.xml
-%{webcactisnmpqueriesdir}/partition.xml
+%{cactidir}/resource/script_queries/cacti_data_query_snmp_disk_statistics.xml
+%{cactidir}/resource/script_queries/cacti_graph_template_disk_io_bytessec.xml
+%{cactidir}/resource/snmp_queries/partition.xml
 
 %files -n snmpdiskio
 %defattr(644,root,root,755)
