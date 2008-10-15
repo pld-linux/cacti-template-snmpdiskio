@@ -3,7 +3,7 @@ Summary:	Disk I/O statistics (Read/Write bytes) in Cacti
 Summary(pl.UTF-8):	Statystyki operacji dyskowych we/wy (odczyt/zapis w bajtach) w Cacti
 Name:		cacti-addons-snmpdiskio
 Version:	0.9.6
-Release:	3
+Release:	4
 License:	GPL v2
 Group:		Applications/WWW
 Source0:	http://forums.cacti.net/files/%{plugin}-0.9.4.tar.gz
