@@ -4,7 +4,7 @@ Summary:	Disk I/O statistics (Read/Write bytes) in Cacti
 Summary(pl.UTF-8):	Statystyki operacji dyskowych we/wy (odczyt/zapis w bajtach) w Cacti
 Name:		cacti-template-%{template}
 Version:	0.9.6
-Release:	5
+Release:	6
 License:	GPL v2
 Group:		Applications/WWW
 Source0:	http://forums.cacti.net/files/%{template}-0.9.4.tar.gz
