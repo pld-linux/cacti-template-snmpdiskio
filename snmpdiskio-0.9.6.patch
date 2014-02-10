@@ -2,9 +2,9 @@
 +++ 0.9.6/snmpdiskio 	2008-10-05 16:01:46.636993902 +0300
 @@ -1,7 +1,21 @@
 -#!/bin/sh
--# $Id$
+-# $Id: snmpdiskio,v 1.3 2006/04/04 13:11:47 mikaelf Exp $
 +#!/bin/sh
-+# $Id$
++#
 +# snmpdiskio v0.9.6 (c) 2008 Dieter Verlaeckt <dieter.verlaeckt@gmail.com>
 +# snmpdiskio v0.9.5 (c) 2007 Pablo Destefanis <pdestefanis@gmail.com>
  # snmpdiskio v0.9.4 (c) 2006 Mikael Fridh <mikael@meanstreak.se>

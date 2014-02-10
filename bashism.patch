@@ -1,9 +1,9 @@
---- snmpdiskio-0.9.4/snmpdiskio~	2006-04-04 16:19:35.000000000 +0300
-+++ snmpdiskio-0.9.4/snmpdiskio	2008-10-05 15:54:02.460131923 +0300
+--- cacti-template-snmpdiskio-0.9.6/snmpdiskio~	2014-02-10 12:29:13.014370391 +0200
++++ cacti-template-snmpdiskio-0.9.6/snmpdiskio	2014-02-10 12:29:45.033850913 +0200
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh
- # $Id$
+ # $Id: snmpdiskio,v 1.3 2006/04/04 13:11:47 mikaelf Exp $
  # snmpdiskio v0.9.4 (c) 2006 Mikael Fridh <mikael@meanstreak.se>
  
 @@ -13,17 +13,17 @@
