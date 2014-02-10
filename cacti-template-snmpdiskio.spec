@@ -4,7 +4,7 @@ Summary:	Disk I/O statistics (Read/Write bytes) in Cacti
 Summary(pl.UTF-8):	Statystyki operacji dyskowych we/wy (odczyt/zapis w bajtach) w Cacti
 Name:		cacti-template-%{template}
 Version:	0.9.6
-Release:	6
+Release:	7
 License:	GPL v2
 Group:		Applications/WWW
 Source0:	http://forums.cacti.net/files/%{template}-0.9.4.tar.gz
@@ -13,6 +13,7 @@ Source1:	http://forums.cacti.net//files/partition_424.xml
 # Source1-md5:	d7e569dfe417f49c7b8a2fe5b5a52382
 Patch0:		bashism.patch
 Patch1:		%{template}-0.9.6.patch
+Patch2:		xml-fix.patch
 URL:		http://forums.cacti.net/about12742.html
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.554
@@ -33,9 +34,10 @@ w Cacti.
 %prep
 %setup -qc
 mv %{template}-*/* .
+cp -p %{SOURCE1} partition.xml
 %patch0 -p1
 %patch1 -p1
-cp -p %{SOURCE1} partition.xml
+%patch2 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
