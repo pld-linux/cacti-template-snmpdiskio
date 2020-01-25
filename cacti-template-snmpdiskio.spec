@@ -1,5 +1,4 @@
 %define		template snmpdiskio
-%include	/usr/lib/rpm/macros.php
 Summary:	Disk I/O statistics (Read/Write bytes) in Cacti
 Summary(pl.UTF-8):	Statystyki operacji dyskowych we/wy (odczyt/zapis w bajtach) w Cacti
 Name:		cacti-template-%{template}
